@@ -86,7 +86,7 @@ pipeline{
                 echo "Username: $USER"
                 echo "Password: $PASS"
 
-                def curlcomm= "curl -u '($USER):($PASS)' -T target/*.jar $(params.ArtifactoryURL)/artifactory/example-repo-local/"
+                def curlcomm= "curl -u '($USER):($PASS)' -T target/*.jar ($params.ArtifactoryURL)/artifactory/example-repo-local/"
                 echo " $curlcomm"
                 sh curlcomm
                 
